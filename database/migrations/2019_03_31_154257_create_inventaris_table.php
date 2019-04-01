@@ -18,7 +18,6 @@ class CreateInventarisTable extends Migration
             $table->datetime('tanggal_register');
             $table->integer('id_ruang')->unsigned();
             $table->integer('id_petugas')->unsigned();
-            $table->string('kode_inventaris', 50);
             $table->string('barcode', 225)->nullable();
             $table->text('image')->nullable();
 

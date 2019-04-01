@@ -4,12 +4,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Level extends Model {
 
-    protected $fillable = [];
-
-    protected $dates = [];
+    protected $fillable = [
+        'nama_level'
+    ];
 
     public static $rules = [
-        // Validation rules
+        'nama_level' => 'required'
     ];
 
     // Relationships

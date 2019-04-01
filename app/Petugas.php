@@ -4,12 +4,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Petugas extends Model {
 
-    protected $fillable = [];
-
-    protected $dates = [];
+    protected $fillable = [
+        'username', 'password', 'nama_petugas', 'id_level'
+    ];
 
     public static $rules = [
-        // Validation rules
+        'username' => 'required', 
+        'password' => 'required', 
+        'nama_petugas' => 'required', 
+        'id_level' => 'required'
     ];
 
     // Relationships

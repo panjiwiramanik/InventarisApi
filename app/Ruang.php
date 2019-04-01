@@ -4,12 +4,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Ruang extends Model {
 
-    protected $fillable = [];
-
-    protected $dates = [];
+    protected $fillable = [
+        'nama_ruang', 'kode_ruang', 'keterangan'
+    ];
 
     public static $rules = [
-        // Validation rules
+        'nama_ruang' => 'required', 
+        'kode_ruang' => 'required'
     ];
 
     // Relationships

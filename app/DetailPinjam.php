@@ -4,12 +4,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class DetailPinjam extends Model {
 
-    protected $fillable = [];
-
-    protected $dates = [];
+    protected $fillable = [ 
+        'id_peminjaman', 'id_inventaris', 'jumlah'
+    ];
 
     public static $rules = [
-        // Validation rules
+        'id_peminjaman' => 'required', 
+        'id_inventaris' => 'required', 
+        'jumlah' => 'required'
     ];
 
     // Relationships
