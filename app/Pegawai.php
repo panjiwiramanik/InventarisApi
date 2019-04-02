@@ -4,6 +4,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pegawai extends Model {
 
+    protected $table = 'pegawai';
+
+    public $timestamps = false;
+
     protected $fillable = [
         'nama_pegawai', 'nip', 'alamat', 'kode_unik'
     ];
