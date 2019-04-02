@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Hash;
 
 trait RESTActions {
 
@@ -61,10 +62,10 @@ trait RESTActions {
         $m = self::MODEL;
         $model = $m::where('username', '=', $request['username'])->get();
 
-        if(is_null($model)){
+        if($model < 1){
             return $this->respond(Response::HTTP_NOT_FOUND);
         } else {
-            if (hash::check($request['password'], $model[0]['password'])) {
+            if ($request['password'] == $model[0]['password']) {
                 return $this->respond(Response::HTTP_OK, $model);
             } else {
                 return $this->respond(Response::HTTP_NOT_FOUND);
@@ -77,10 +78,10 @@ trait RESTActions {
         $m = self::MODEL;
         $model = $m::where('nama_pegawai', '=', $request['nama_pegawai'])->get();
 
-        if(is_null($model)){
+        if(count($model) < 1){
             return $this->respond(Response::HTTP_NOT_FOUND);
         } else {
-            if (hash::check($request['kode_unik'], $model[0]['kode_unik'])) {
+            if ($request['kode_unik'] == $model[0]['kode_unik']) {
                 return $this->respond(Response::HTTP_OK, $model);
             } else {
                 return $this->respond(Response::HTTP_NOT_FOUND);
