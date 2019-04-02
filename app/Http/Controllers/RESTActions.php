@@ -75,7 +75,7 @@ trait RESTActions {
     public function loginPegawai(Request $request)
     {
         $m = self::MODEL;
-        $model = $m::where('username', '=', $request['username'])->get();
+        $model = $m::where('nama_pegawai', '=', $request['nama_pegawai'])->get();
 
         if(is_null($model)){
             return $this->respond(Response::HTTP_NOT_FOUND);
