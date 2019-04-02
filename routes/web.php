@@ -18,10 +18,13 @@ $router->get('/', function () use ($router) {
 /**
  * Routes for resource detail-pinjam
  */
+$router->post('login-admin', 'PetugasController@loginAdmin');
+$router->post('login-pegawai', 'PegawaisController@loginPegawai');
+
 $router->get('detail-pinjam', 'DetailPinjamsController@all');
 $router->get('detail-pinjam/{id}', 'DetailPinjamsController@get');
 $router->post('detail-pinjam', 'DetailPinjamsController@add');
-$router->put('detail-pinjam/{id}', 'DetailPinjamsController@put');
+$router->post('detail-pinjam/{id}', 'DetailPinjamsController@put');
 $router->delete('detail-pinjam/{id}', 'DetailPinjamsController@remove');
 
 /**
@@ -30,7 +33,7 @@ $router->delete('detail-pinjam/{id}', 'DetailPinjamsController@remove');
 $router->get('inventaris', 'InventarisController@all');
 $router->get('inventaris/{id}', 'InventarisController@get');
 $router->post('inventaris', 'InventarisController@add');
-$router->put('inventaris/{id}', 'InventarisController@put');
+$router->post('inventaris/{id}', 'InventarisController@put');
 $router->delete('inventaris/{id}', 'InventarisController@remove');
 
 /**
@@ -39,7 +42,7 @@ $router->delete('inventaris/{id}', 'InventarisController@remove');
 $router->get('jenis', 'JenisController@all');
 $router->get('jenis/{id}', 'JenisController@get');
 $router->post('jenis', 'JenisController@add');
-$router->put('jenis/{id}', 'JenisController@put');
+$router->post('jenis/{id}', 'JenisController@put');
 $router->delete('jenis/{id}', 'JenisController@remove');
 
 /**
@@ -48,7 +51,7 @@ $router->delete('jenis/{id}', 'JenisController@remove');
 $router->get('level', 'LevelsController@all');
 $router->get('level/{id}', 'LevelsController@get');
 $router->post('level', 'LevelsController@add');
-$router->put('level/{id}', 'LevelsController@put');
+$router->post('level/{id}', 'LevelsController@put');
 $router->delete('level/{id}', 'LevelsController@remove');
 
 /**
@@ -57,7 +60,7 @@ $router->delete('level/{id}', 'LevelsController@remove');
 $router->get('pegawai', 'PegawaisController@all');
 $router->get('pegawai/{id}', 'PegawaisController@get');
 $router->post('pegawai', 'PegawaisController@add');
-$router->put('pegawai/{id}', 'PegawaisController@put');
+$router->post('pegawai/{id}', 'PegawaisController@put');
 $router->delete('pegawai/{id}', 'PegawaisController@remove');
 
 /**
@@ -66,7 +69,7 @@ $router->delete('pegawai/{id}', 'PegawaisController@remove');
 $router->get('peminjaman', 'PeminjamenController@all');
 $router->get('peminjaman/{id}', 'PeminjamenController@get');
 $router->post('peminjaman', 'PeminjamenController@add');
-$router->put('peminjaman/{id}', 'PeminjamenController@put');
+$router->post('peminjaman/{id}', 'PeminjamenController@put');
 $router->delete('peminjaman/{id}', 'PeminjamenController@remove');
 
 /**
@@ -75,7 +78,7 @@ $router->delete('peminjaman/{id}', 'PeminjamenController@remove');
 $router->get('petugas', 'PetugasController@all');
 $router->get('petugas/{id}', 'PetugasController@get');
 $router->post('petugas', 'PetugasController@add');
-$router->put('petugas/{id}', 'PetugasController@put');
+$router->post('petugas/{id}', 'PetugasController@put');
 $router->delete('petugas/{id}', 'PetugasController@remove');
 
 /**
@@ -84,5 +87,5 @@ $router->delete('petugas/{id}', 'PetugasController@remove');
 $router->get('ruang', 'RuangsController@all');
 $router->get('ruang/{id}', 'RuangsController@get');
 $router->post('ruang', 'RuangsController@add');
-$router->put('ruang/{id}', 'RuangsController@put');
+$router->post('ruang/{id}', 'RuangsController@put');
 $router->delete('ruang/{id}', 'RuangsController@remove');

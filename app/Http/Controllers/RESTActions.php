@@ -56,4 +56,35 @@ trait RESTActions {
         return response()->json($data, $status);
     }
 
+    public function loginAdmin(Request $request)
+    {
+        $m = self::MODEL;
+        $model = $m::where('username', '=', $request['username'])->get();
+
+        if(is_null($model)){
+            return $this->respond(Response::HTTP_NOT_FOUND);
+        } else {
+            if (hash::check($request['password'], $model[0]['password'])) {
+                return $this->respond(Response::HTTP_OK, $model);
+            } else {
+                return $this->respond(Response::HTTP_NOT_FOUND);
+            }
+        }
+    }
+
+    public function loginPegawai(Request $request)
+    {
+        $m = self::MODEL;
+        $model = $m::where('username', '=', $request['username'])->get();
+
+        if(is_null($model)){
+            return $this->respond(Response::HTTP_NOT_FOUND);
+        } else {
+            if (hash::check($request['kode_unik'], $model[0]['kode_unik'])) {
+                return $this->respond(Response::HTTP_OK, $model);
+            } else {
+                return $this->respond(Response::HTTP_NOT_FOUND);
+            }
+        }
+    }
 }
