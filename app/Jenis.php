@@ -5,7 +5,7 @@ use Illuminate\Database\Eloquent\Model;
 class Jenis extends Model {
 
 	protected $table = 'jenis';
-	
+
 	public $timestamps = false;
 
     protected $fillable = [
@@ -14,7 +14,8 @@ class Jenis extends Model {
 
     public static $rules = [
         'nama_jenis' => 'required',
-        'kode_jenis' => 'required'
+        'kode_jenis' => 'required',
+        'keterangan' => 'required'
     ];
 
     // Relationships

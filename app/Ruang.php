@@ -14,7 +14,8 @@ class Ruang extends Model {
 
     public static $rules = [
         'nama_ruang' => 'required', 
-        'kode_ruang' => 'required'
+        'kode_ruang' => 'required',
+        'keterangan' => 'required'
     ];
 
     // Relationships
